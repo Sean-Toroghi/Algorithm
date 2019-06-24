@@ -45,7 +45,7 @@ void insertionSort_recursive(int arr[], int i, int n)
 	// the right by one position i.e. arr[j+1..i]
  
 	if (i + 1 <= n) {
-		insertionSort(arr, i + 1, n);
+		insertionSort_recursive(arr, i + 1, n);
 	}
 }
 //***************************************************
