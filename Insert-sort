@@ -56,6 +56,7 @@ void printArray(int arr[], int n)
 		printf("%d ", arr[i]);
 }
 //***************************************************
+//***************************************************
 int main(void)
 {
 	int arr[] = { 3, 8, 5, 4, 1, 9, -2 };
@@ -68,7 +69,7 @@ int main(void)
 	insertionSort_recursive(arr, 1, n - 1);
   
   //call iterative approach
-  insertionSort_iterative(arr, n);
+  	insertionSort_iterative(arr, n);
 
 	// print the sorted array
 	printArray(arr, n);
