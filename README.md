@@ -10,10 +10,16 @@
   - Advantage: less space required
 
 
-## Graph search
+## Graph
 
-1. BFS
-  - Compute shortest path (the fewest # of edges on a path from <img src="https://render.githubusercontent.com/render/math?math=s\rightarrow v">
+- BFS
+  1. Compute shortest path (the fewest # of edges on a path from <img src="https://render.githubusercontent.com/render/math?math=s\rightarrow v">
+  2. Compute all connected components ("pieces") in a given graph
+- DFS
+  1. Compute topological ordering if a directed acyclic graph
+  2. Compute Strongly Connected Components of a given graph
+- Dijkstra's shortest path
+  
 ## Data structure
 
 
