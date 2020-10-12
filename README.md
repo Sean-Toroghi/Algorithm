@@ -12,6 +12,8 @@
 
 ## Graph search
 
+1. BFS
+  - Compute shortest path (the fewest # of edges on a path from <img src="https://render.githubusercontent.com/render/math?math=s\rightarrow v">
 ## Data structure
 
 
