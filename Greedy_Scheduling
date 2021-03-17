@@ -1,3 +1,4 @@
+import numpy as np
 # Generate schedule numpy array [[weight, length]] randomly. Total number of jobs = n
 def generate_data(n=20):
     W=np.random.randint(1,20,size=n)
@@ -6,42 +7,39 @@ def generate_data(n=20):
 
     return schedule
 
-def Greeduyratio(S,printing='No'):
-    ratio=np.array([S[i,0]/S[i,1] for i in range(len(S))]) # compute ratio W/L
-    order = np.arange(0, len(S))
-    ratio_order = np.vstack((ratio,order)).T
-    Greedy_indx = np.array([ratio_order[ratio_order[:,0].argsort(kind='mergesort')][:,1]]) 
-    indx = np.ndarray.tolist(Greedy_indx)
-    Greedy_ratio_sorted = S[np.argsort(indx)] #asc order
-    result = Greedy_ratio_sorted.reshape(S.shape) 
-    result = result[::-1] # desc order
-    if printing == 'Yes':
-        print('original array:\n{}\nGreedy_Ratio_sorted array :\n{}'.format(S.T,result.T))
-
+def Greedyratio(S,printing='No'):
+    ratio=np.array([S[i,0]/S[i,1] for i in range(len(S))]) # compute difference W-L
+    indx = np.arange(0, len(S))
+    ratio_indx = np.vstack((ratio,indx)).T # stack ratio and index
+    # get the index of sort by ratio
+    sorted_indx = np.array([ratio_indx[ratio_indx[:,0].argsort(kind='mergesort')][:,1]]).reshape(len(S),)
+    i = np.ndarray.tolist(sorted_indx)#asc
+    indx = i[::-1]  # desc order
+    i = [int(i) for i in indx]
+    result = S[i].reshape(S.shape)
     return result
 
-def GreeduyDiff(S,printing='No'):
-    ratio=np.array([S[i,0]-S[i,1] for i in range(len(S))]) # compute difference W-L
-    order = np.arange(0, len(S))
-    ratio_order = np.vstack((ratio,order)).T
-    Greedy_indx = np.array([ratio_order[ratio_order[:,0].argsort(kind='mergesort')][:,1]])
-    indx = np.ndarray.tolist(Greedy_indx)
-    Greedy_diff_sorted = S[np.argsort(indx)]
-    result = Greedy_diff_sorted.reshape(S.shape)
-    result=result[::-1]
-    if printing=='Yes':
-        print('original array:\n{}\nGreedy_Difference_sorted array :\n{}'.format(S.T,result.T))
-
+def GreedyDiff(S,printing='No'):
+    dif=np.array([S[i,0]-S[i,1] for i in range(len(S))]) # compute difference W-L
+    indx = np.arange(0, len(S))
+    dif_indx = np.vstack((dif,indx)).T # stack ratio and index
+    # get the index of sort by ratio
+    sorted_indx = np.array([dif_indx[dif_indx[:,0].argsort(kind='mergesort')][:,1]]).reshape(len(S),)
+    i = np.ndarray.tolist(sorted_indx)#asc
+    indx = i[::-1]  # desc order
+    i = [int(i) for i in indx]
+    result = S[i].reshape(S.shape)
     return result
+ 
+
 #Compute Sum of the weighted schedule
-def Sum_Wieghted_Schedule(arr1):
+def SWS(arr1):
     WSC_resutl = arr1[0,0]*arr1[0,1]
     for i in range(1,len(arr1)):
         WSC_resutl = WSC_resutl  + (arr1[i,0]+arr1[i-1,0])/arr1[i,1]
     return WSC_resutl
 
+array1 = generate_data()
+print('Array: {}\n, Original Sum of weigheted schedules ={}\nGreedy_Ratio={}\nGreedy_difference {}'.format(
+    array1,SWS(array1),SWS(Greedyratio(array1)),SWS(GreedyDiff(array1))))
 
-original = generate_data(10)
-_GreedyRatiosorted =Greeduyratio(original, 'Yes')
-_Greedydifference = GreeduyDiff(original)
-print('Original ={}\nGreedy_Ratio={}\nGreedy_difference {}'.format(Sum_Wieghted_Schedule(original),Sum_Wieghted_Schedule(_GreedyRatiosorted),Sum_Wieghted_Schedule(_Greedydifference)))
