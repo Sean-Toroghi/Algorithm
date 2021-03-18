@@ -1,34 +1,33 @@
 import numpy as np
 # Generate schedule numpy array [[weight, length]] randomly. Total number of jobs = n
 def generate_data(n=20):
-    W=np.random.randint(1,20,size=n)
+    W=np.random.randint(1,10,size=n)
     L=np.random.randint(1,10,size=n)
     schedule=np.vstack((W, L)).T
-
     return schedule
 
 def Greedyratio(S,printing='No'):
-    ratio=np.array([S[i,0]/S[i,1] for i in range(len(S))]) # compute difference W-L
+    ratio=np.array([S[i,0]/S[i,1] for i in range(len(S))]) # compute ratio W/L
     indx = np.arange(0, len(S))
     ratio_indx = np.vstack((ratio,indx)).T # stack ratio and index
-    # get the index of sort by ratio
-    sorted_indx = np.array([ratio_indx[ratio_indx[:,0].argsort(kind='mergesort')][:,1]]).reshape(len(S),)
-    i = np.ndarray.tolist(sorted_indx)#asc
-    indx = i[::-1]  # desc order
-    i = [int(i) for i in indx]
-    result = S[i].reshape(S.shape)
+    # sort (asc) based on the diff value
+    sorted_arr = ratio_indx[np.argsort(ratio_indx[:,0])]
+    sorted_indx = sorted_arr[:,1] # get indices
+    indx = sorted_indx[::-1]  # desc order
+    indx = [int(i) for i in indx]
+    result = S[indx]
     return result
 
 def GreedyDiff(S,printing='No'):
-    dif=np.array([S[i,0]-S[i,1] for i in range(len(S))]) # compute difference W-L
+    diff=np.array([S[i,0]-S[i,1] for i in range(len(S))]) # compute ratio W/L
     indx = np.arange(0, len(S))
-    dif_indx = np.vstack((dif,indx)).T # stack ratio and index
-    # get the index of sort by ratio
-    sorted_indx = np.array([dif_indx[dif_indx[:,0].argsort(kind='mergesort')][:,1]]).reshape(len(S),)
-    i = np.ndarray.tolist(sorted_indx)#asc
-    indx = i[::-1]  # desc order
-    i = [int(i) for i in indx]
-    result = S[i].reshape(S.shape)
+    diff_indx = np.vstack((diff,indx)).T # stack ratio and index
+    # sort (asc) based on the diff value
+    sorted_arr = diff_indx[np.argsort(diff_indx[:,0])]
+    sorted_indx = sorted_arr[:,1] # get indices
+    indx = sorted_indx[::-1]  # desc order
+    indx = [int(i) for i in indx]
+    result = S[indx]
     return result
  
 
@@ -39,7 +38,8 @@ def SWS(arr1):
         WSC_resutl = WSC_resutl  + (arr1[i,0]+arr1[i-1,0])/arr1[i,1]
     return WSC_resutl
 
-array1 = generate_data()
-print('Array: {}\n, Original Sum of weigheted schedules ={}\nGreedy_Ratio={}\nGreedy_difference {}'.format(
-    array1,SWS(array1),SWS(Greedyratio(array1)),SWS(GreedyDiff(array1))))
+array1 = generate_data(20)
+
+print('Original Sum of weigheted schedules ={:0.0f}\nGreedy_Ratio={:0.0f}\nGreedy_difference {:0.0f}'
+      .format(SWS(array1),SWS(Greedyratio(array1)),SWS(GreedyDiff(array1))))
 
