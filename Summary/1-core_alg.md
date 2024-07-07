@@ -21,4 +21,14 @@ __Analyze algorithm__
 - space complexity: runtime memory requirements 
 - time complexity: time the alg. will take to run
 
+| Complexity Class | Name        | Example Operations                    |
+|------------------|-------------|---------------------------------------|
+| O(1)             | Constant    | Append, get item, set item.           |
+| O(logn)          | Logarithmic | Finding an element in a sorted array. |
+| O(n)             | Linear      | Copy, insert, delete, iteration       |
+| O(n^2)            | Quadratic   | Nested loops                          |
+
+---
+
+
   
