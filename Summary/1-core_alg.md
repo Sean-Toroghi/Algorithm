@@ -7,6 +7,9 @@ __Algorithm design phase__
 
 1. The design phase: In the design phase, the architecture, logic, and implementation details of the algorithm are envisioned and documented. At this phase both accuracy and performance are objectives, and the outcome of this phase is more than one candidate algorithm.
 2. Coding phase converts the designed algorithm into a program.
+3. Implement/deploy, which requires to design a production environment for the code to be run at. For data-intensive algorithms, a data ingress pipeline and the strategy to cache and store data may need to be designed.
+
+   
 
 Design of an algorithms requires to satisfy both functional (exact required specification and expected features) and non-functional (preformance, scalability, usability, and accuracy) requirements.
 
