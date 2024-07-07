@@ -3,6 +3,8 @@
 
 --- 
 
+## General
+
 __Algorithm design phase__
 
 1. The design phase: In the design phase, the architecture, logic, and implementation details of the algorithm are envisioned and documented. At this phase both accuracy and performance are objectives, and the outcome of this phase is more than one candidate algorithm.
@@ -30,5 +32,13 @@ __Analyze algorithm__
 
 ---
 
+__Algorithm types__
 
+Algorithm categorized, in gneeral, into following two categories:
+1. detrministic: a particular input, always generates exactly the same output
+2. randomized: the randomization characteristic of the algorithm generates slightly different output for the same input.
+
+--- 
+
+## Data structure
   
