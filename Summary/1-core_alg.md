@@ -41,4 +41,37 @@ Algorithm categorized, in gneeral, into following two categories:
 --- 
 
 ## Data structure
-  
+
+Data structure plays a crusial role in developing an algorithm efficiently. Dependung on wwhether an algorithm has a specific logic (such as recursive or iterative), the data structure specifically designed for that logit is required when implementing it. 
+
+---
+
+__python built in data structures__
+
+| Data Structure | Brief Explanation                                         | Example                              |
+|----------------|-----------------------------------------------------------|--------------------------------------|
+| List           | An ordered, possibly nested, mutable sequence of elements | ["John", 33,"Toronto", True]         |
+| Tuple          | An ordered immutable sequence of elements                 | ('Red','Green','Blue','Yellow')      |
+| Dictionary     | An unordered collection of key-value pairs                | {'brand': 'Apple', 'color': 'black'} |
+| Set            | An unordered collection of elements                       | {'a', 'b', 'c'}                      |
+
+---
+
+__Other data structures__
+
+__Stack__
+- follows LIFO or FILO
+- operations
+  - push $O(1)$
+  - pop $O(1)$
+
+_Queue__
+- follows FIFO
+- operations
+  - dequeue $O(1)$
+  - enqueue $O(1)$
+
+---
+__Trees__
+
+Types of trees
