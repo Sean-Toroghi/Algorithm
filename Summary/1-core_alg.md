@@ -74,4 +74,12 @@ _Queue__
 ---
 __Trees__
 
-Types of trees
+__Types of trees__
+- Binary tree
+- Full tree: every node has either zero or two children
+- Perfect tree: A perfect tree is a special type of full tree in which all the leaf nodes are at the same level. 
+- Ordered tree:  If the children of a node are organized in some order according to particular criteria, the tree is called an ordered tree.
+ 
+---
+## Sort and search algorithms
+
