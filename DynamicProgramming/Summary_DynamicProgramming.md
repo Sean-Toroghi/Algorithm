@@ -14,7 +14,7 @@ __Table of contents__
   - Problem: Longest increasing subsequence
   - PRoblem:  
 3. Codes
-  - []() 
+  - [Climbing Stairs](https://github.com/Sean-Toroghi/Algorithm/blob/28d78ce667064f5221d13c3bba3a1a78ea8a7bef/DynamicProgramming/DynamicProgramming_1D_Climbing_Stairs.ipynb) 
 
 
 
@@ -36,4 +36,7 @@ __Overlapping subproblems__
 
 
 ## Problem: Longest common subsequence
-Given a sequence $X = \{x1; x2; : : : ; xm\}$, another sequence $Z = \{z1; z2; ... ; \z_k\}$ is a subsequence of $X$ if there exists a strictly increasing sequence $\{i1; i2;: : : ; i_k\}$ of indices of $X$ such that for all $j = \{ 1; 2;  : : ; k\}$ we have $x_{i_j} = Z_j$ .
+Given a sequence $X = \\{x_1; x_2; ... ; x_m \\}$, another sequence $Z = \\{z1; z2; ... ; z_k \\}$ is a subsequence of $X$ if there exists a strictly increasing sequence $\\{i_1; i_2; ... ; i_k \\}$ of indices of $X$ such that for all $j = \\{ 1; 2;  : : ; k\\}$ we have $x_{i_j} = Z_j$ .
+
+Given two sequences $X$ and $Y$, we say that a sequence Z is a common subsequence of $X$ and $Y$ if $Z$ is a subsequence of both $X$ and $Y$. The goal is to find the longest $Z$.
+
