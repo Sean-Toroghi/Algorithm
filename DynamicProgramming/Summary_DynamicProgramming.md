@@ -7,9 +7,14 @@ References
 - [Advance algorithm - CMU](https://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/15850-s23/www/oldindex.html)
 - [book: Introduction to Algorithms, Fourth Edition - Ch.15](https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/)
 
+__Table of contents__
+1. [Summary - Notes](#summary)
+2. Codes
+  - []() 
 
 
-# What are the inputs to subproblems
+
+# <a name = 'summary'>What are the inputs to subproblems</a>
 
 __String split problem__
 
