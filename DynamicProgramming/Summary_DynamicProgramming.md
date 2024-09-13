@@ -8,13 +8,15 @@ References
 - [book: Introduction to Algorithms, Fourth Edition - Ch.14](https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/)
 
 __Table of contents__
-1. [Summary - Notes](#summary)
-  - Overview
-  - Problem: Longest common subsequence
-  - Problem: Longest increasing subsequence
-  - PRoblem:  
-3. Codes
-  - [Climbing Stairs](https://github.com/Sean-Toroghi/Algorithm/blob/28d78ce667064f5221d13c3bba3a1a78ea8a7bef/DynamicProgramming/DynamicProgramming_1D_Climbing_Stairs.ipynb) 
+[Summary - Notes](#summary)
+- Overview
+- Problem: Longest common subsequence
+- Problem: Longest increasing subsequence
+- PRoblem:  
+
+__Codes__
+- [Climbing Stairs](https://github.com/Sean-Toroghi/Algorithm/blob/28d78ce667064f5221d13c3bba3a1a78ea8a7bef/DynamicProgramming/DynamicProgramming_1D_Climbing_Stairs.ipynb)
+- [House Robber]()
 
 
 
