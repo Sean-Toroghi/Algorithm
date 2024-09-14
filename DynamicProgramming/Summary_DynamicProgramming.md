@@ -12,11 +12,12 @@ __Table of contents__
 - Overview
 - Problem: Longest common subsequence
 - Problem: Longest increasing subsequence
-- PRoblem:  
+- Problem:  
 
 __Codes__
-- [Climbing Stairs](https://github.com/Sean-Toroghi/Algorithm/blob/28d78ce667064f5221d13c3bba3a1a78ea8a7bef/DynamicProgramming/DynamicProgramming_1D_Climbing_Stairs.ipynb)
-- [House Robber]()
+- 1D dynamic programming [link](https://github.com/Sean-Toroghi/Algorithm/blob/cff510dccdddfb03256bd595d2387a5c10db0e10/DynamicProgramming/DynamicProgramming_1Dim.ipynb)
+- nD dynamic programming
+ 
 
 
 
