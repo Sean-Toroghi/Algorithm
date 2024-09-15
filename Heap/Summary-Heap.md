@@ -23,6 +23,8 @@ __Codes__
 
 # <a name = 'summary'>Heap data structure</a>
 
+__Heap data strcutre is most suitable when:__ we require to have a super fast (constant time) min (or max) extraction in a dynamic situation (the dataset keeps on evolving).
+
 The (binary) heap data structure is an array object that we can view as a nearly complete binary tree. We can have either min-Heap or max-Heap.
 
 Heap property:
@@ -31,14 +33,17 @@ Heap property:
 
 
 Operations:
-- 
+- Extract-Min() in $O(1)$ time
+- Delete() in $O(log n)$ time
+- Heapify() in $O(n)$ time
 
+We can emoloy Heap to sort an array in $O(n \log n)$ time. Despite the fact it is similar to most sorting algorithms, the advantage of using Heap is its capability to sort _in place_. This makes it much more efficient than `merge sort` algorithm , which requires $O(n)$ space. 
 
  
 Applications
 - implement efficient priority queue
 - sort in place in $O(n\log n)$ time
-- linear extract min (max) in a dynamic environment
+- constant time extract min (max) in a dynamic environment
 
 ## Problem:   
 
