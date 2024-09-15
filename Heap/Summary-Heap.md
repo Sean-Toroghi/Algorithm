@@ -16,7 +16,7 @@ __Table of contents__
 
 __Codes__
 
-[link]()
+[link](https://github.com/Sean-Toroghi/Algorithm/blob/9786a81cefcfae64b2e337816d1875a665ddbf32/Heap/Heap.ipynb)
   
 
 
@@ -33,9 +33,9 @@ Heap property:
 
 
 Operations:
-- Extract-Min() in $O(1)$ time
-- Delete() in $O(log n)$ time
-- Heapify() in $O(n)$ time
+- 'Extract-Min()' in $O(1)$ time
+- 'Delete()' in $O(log n)$ time
+- 'Heapify()' in $O(n)$ time
 
 We can emoloy Heap to sort an array in $O(n \log n)$ time. Despite the fact it is similar to most sorting algorithms, the advantage of using Heap is its capability to sort _in place_. This makes it much more efficient than `merge sort` algorithm , which requires $O(n)$ space. 
 
