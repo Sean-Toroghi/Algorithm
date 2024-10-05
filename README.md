@@ -1,3 +1,31 @@
+
+__Table of contents__
+
+1. General purpose algorithms
+  - Array and string manipulation
+  - Sliding window
+  - Two pointers
+  - Fast and slow pointers
+  - Merge intervals
+  - Graph traversal, such as depth first search (DFS) and breadth-first search (BFS)
+2. Core
+  - Hashtables
+  - Dynamic programming
+  - Sorting
+  - Binary search
+  - Linear programming
+    
+
+
+
+
+
+
+
+
+
+
+
 # Algorithm
 
 
