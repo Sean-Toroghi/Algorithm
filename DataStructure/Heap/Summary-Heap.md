@@ -1,4 +1,4 @@
-<h1> Heap data structure and its applications</h1>
+<h1> Heap data structure and its applications</h1> 
 
 [References](https://github.com/Sean-Toroghi/Algorithm/blob/e3b64300643321de0f4db752d9829e479c4f1e53/README.md)
 
