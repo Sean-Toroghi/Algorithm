@@ -1,14 +1,18 @@
 <h1> Heap data structure and its applications</h1>
 
-[References]()
+[References](https://github.com/Sean-Toroghi/Algorithm/blob/e3b64300643321de0f4db752d9829e479c4f1e53/README.md)
 
 
 __Table of contents__
-[Summary - Notes](#summary)
-- Overview
-- Problem: Longest common subsequence
-- Problem: Longest increasing subsequence
-- Problem:  
+
+- [Overview - Notes](#overview)
+
+- Problems:
+  1. Longest common subsequence
+  2. Longest increasing subsequence
+  3. sorting
+  4. Speed up Dijkstra
+  5. Compute median
 
 __Codes__
 
@@ -17,30 +21,28 @@ __Codes__
 
 
 
-# <a name = 'summary'>Heap data structure</a>
-
-__Heap data strcutre is most suitable when:__ we require to have a super fast (constant time) min (or max) extraction in a dynamic situation (the dataset keeps on evolving).
-
-The (binary) heap data structure is an array object that we can view as a nearly complete binary tree. We can have either min-Heap or max-Heap.
-
-Heap property:
-- in min-Heap, every parent value is smaller than its childrens' values. The smallest value in min-Heap is its root.
-- in max-Heap, every parent's value is larger than its childrens' values.
+# <a name = 'overview'>Heap data structure</a>
 
 
-Operations:
-- 'Extract-Min()' in $O(1)$ time
-- 'Delete()' in $O(log n)$ time
-- 'Heapify()' in $O(n)$ time
+__Heap data structure__ is a data stricture that keeps track of keys associated with objects in an evolving (dynamic) data structure. Each element in the data structure has a unique key (pointer). This data structure is most suitable in the case the algorithm requires to compute min or max many times, in a dynamic environment. 
 
-We can emoloy Heap to sort an array in $O(n \log n)$ time. Despite the fact it is similar to most sorting algorithms, the advantage of using Heap is its capability to sort _in place_. This makes it much more efficient than `merge sort` algorithm , which requires $O(n)$ space. 
+The (binary) heap data structure is a tree implemented by an array object. The _Extract Min()_ and _Insert()_ functions are implemented by keeping the tree full, and systematically squashing any violation of the heap property. We can have either Min-Heap or Max-heap data structure.
+
+__Heap property:__ in min-Heap, the key of every object is smaller or equal to the keys of its children.  Root has the smallest key value. Max-Heap is the opposite (key value of every object is larger than all of its children).
+
+
+__Operations - running time:__
+- 'Insert()': $O(log n)$
+- 'Extract-Min()': $O(log n)$
+- 'Find-Min()': $O(1)$ 
+- 'Delete()': $O(log n)$ 
+- 'Heapify()': $O(n)$
+
+
 
  
-Applications
+__Applications:__
 - implement efficient priority queue
-- sort in place in $O(n\log n)$ time
-- constant time extract min (max) in a dynamic environment
-
-## Problem:   
-
+- sort in place in $O(n\log n)$ time: We can employ Heap to sort an array in $O(n \log n)$ time. Despite the fact it is similar to most sorting algorithms, the advantage of using Heap is its capability to sort _in place_. This makes it much more efficient than `merge sort` algorithm , which requires $O(n)$ space. 
+- constant time extract min (max) in a dynamic environment.
 
