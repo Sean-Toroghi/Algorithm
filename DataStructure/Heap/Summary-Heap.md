@@ -64,8 +64,8 @@ To implement the _Extract-Min()_ function,
 
 
 ## Code examples 
-- Improve the running time of the _selection sort_ algorithm from $O(n^2)$ to $O(n \log n)$
-- Improve the running time of Djikstra's shortest path, by heapify vertices at the leading edge tail based on the Dijkstra score and _Extract-Min_ in each iteration and update the heap data structure.
+- __Sorting__: improve the running time of the _selection sort_ algorithm from $O(n^2)$ to $O(n \log n)$
+- __Shortest path: improve the running time of Djikstra's shortest path, by heapify vertices at the leading edge tail based on the Dijkstra score and _Extract-Min_ in each iteration and update the heap data structure.
 
   Dijkstra shortest path: for every direct graph G and starting vertex _s_ and every choice of non-negative edge lengths, the shortest path is computed as the following:
   - maintain a subset of vertices $X4 which has already computed the shortest-path distance to them.
@@ -76,5 +76,5 @@ To implement the _Extract-Min()_ function,
   - instead of tracking dijkstra's score for each edge, compute dijsktra's score for every tailing vertex of the leading edge and heapify them . Then extract the vertex with min score, and add it to the discovered vertex subset ($X$).
   - Update the heap data structure by adding the new tailing vertices of the leading edge from the recently added vertex to $X$
  
-- Compute median: construct two heap data structures: one Min- and one Max- heap.
+- __Compute median:__ construct two heap data structures: one Min- and one Max- heap.
 - 
