@@ -28,7 +28,8 @@ __Heap data structure__ is a data stricture that keeps track of keys associated 
 
 The (binary) heap data structure is a tree implemented by an array object. The _Extract Min()_ and _Insert()_ functions are implemented by keeping the tree full, and systematically squashing any violation of the heap property. We can have either Min-Heap or Max-heap data structure.
 
-__Heap property:__ in min-Heap, the key of every object is smaller or equal to the keys of its children.  Root has the smallest key value. Max-Heap is the opposite (key value of every object is larger than all of its children).
+## Heap property
+In min-Heap, the key of every object is smaller or equal to the keys of its children.  Root has the smallest key value. Max-Heap is the opposite (key value of every object is larger than all of its children).
 
 
 ## Main operations - running time
