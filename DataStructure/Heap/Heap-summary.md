@@ -32,7 +32,7 @@ __Heap property:__ in min-Heap, the key of every object is smaller or equal to t
 
 
 ## Main operations - running time
-- 'Insert()' -    - $O(log n)$
+- 'Insert()'      - $O(log n)$
 - 'Extract-Min()' - $O(log n)$
 - 'Delete()'      - $O(log n)$ 
 - 'Find-Min()'    - $O(1)$ 
