@@ -1,4 +1,4 @@
-<h1>Hash table - sumamry</h1>
+<h1>Hash table; Bloom filter - summary</h1>
 
 [Codes]()
 
@@ -33,6 +33,9 @@ The open-addressing approach, suggests conducting a new mapping, each time a col
 The performance of a hash table drops as the population of input data increases. _Load factor_ is defined as the ratio of the size of data we want to store to the size of the hash table we define to store it is an indicator for managing and maintaining the performance of the hash table. Once we reach a threshold, we need to start storing the data in a new table, or regenerate the hash table with a larger table size. 
 
 A good threshold for load factor is 70%. Once the load factor reaches the threshold, the algorithm requires to resize the table size, in order to maintain expected linear time for operations (lookup). 
+
+---
+# Bloom filter
 
 ## Design a good hash table
 To design a high-performing hash function, we need to consider several factors:
