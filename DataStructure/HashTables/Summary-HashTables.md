@@ -20,7 +20,14 @@ __Status__
 __Code__
 - [Problems solved by hash table approach](https://github.com/Sean-Toroghi/Algorithm/blob/e3819391785d981dee93978d3dcb88084c9e2e8d/DataStructure/HashTables/HashTables.ipynb)
 
-# Overview and summary
+
+
+---
+
+
+
+# Overview and summary<a id='hashsummary'></a>
+
 One of the most useful and ubiquitous data structures is hash tables. The most useful application of hash tables is the case of _fast search_. It is very useful in the case of evolving set of objects that also require fast lookup.
 
 ## Operation
