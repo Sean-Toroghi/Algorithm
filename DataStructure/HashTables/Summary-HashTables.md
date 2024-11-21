@@ -74,8 +74,39 @@ To design a high-performing hash function, we need to consider several factors:
 
 
 ---
-# Hash tables - detail summary<a id='detailsummary'></a>
+# Hash tables - detail summary<a id='hashdetail'></a>
+
+A hash table (or hash map) is a data structure for storing a set of items, so that we can quickly determine whether an item is or is not in the set. Dictionary (also called map or associate array), is an primitive data structure that maps its values to indices called keys. To implement a dictionary, we can simply employ linkedlist, which $O(n)$ time to lookup for a key. A sorted array takes $O(\log n)$ to find a key (BTS algorithm). Implementing a dictionary that takes constant for lookup requires employ hashing. Two important concepts comes with hashing are: average case complexity and randomness. The time complexity is average with hash table and while its behaviour is deteministic, but there is randomness inside the hash function implementation.
+
+The basic idea is to pick a hash function h that maps every possible item x to a small integer h(x). Formaly given universe $\mathbb{U}$ of size $u$, and array $T$ of size $m$ called hash table, where $m<<u$, hash function maps each item in universe to an index the hash table: 
+
+$$h: \mathbb{U}\rightarrow \\{1, 2,\dots, m-1 \\}$$
+
+In this case, an array is a special form of a hash table, in which $u=m$. It is also called _direct access table_. The main idea for using hash table, is inmost cases we do not store all items in a universe. Hense, the data structure needs to store a portion of the items (actualy needed to store vs probably need to store) in the universe. This makes the hash function feasible for mapping item in universe to a smaller size array called hash table. The upside is we can then employ the hash function for lookup in average constant time. The issue arrise when collion occurs, in which more than one item in the universe is assigned to an index in the hash table: $h(x) = h(y)$. This leads to two important design decisions:
+- how to define a hash function to minimize risk of collision
+- if collision occurs, how to handle it that minimizes its effect on the model performance (time complexity)
+
+## Hash function: randomness, unform, universal, near-universal, and k-uniform
+
+__Randomness__
+
+Randomness becomes handy when it comes to design a hash function. If we design a predictable hash function, an adversery will take advantage of it by introducing inputs that always return the same position in hash table. We can introduce randomness in hash function as following: 
+- fix a set of hash functions $\mathbb{H}$ that all could map universte to hash table of size m
+- at runtime, for each hash table choose a hash function randomly from $\mathbb{H}$ and use it for the life of that hash table.
+- each hash table uses its own hash function that is independent of the other hash functions
+
+
+__Uniform hash function__
+
+A  family $\mathscr{H}$ of hash functions is uniform if choosing a hash function uniformly at random from H
+ makes every hash value equally likely for every item in the universe
+
+##   
+
+
+
+
 
 ---
-# Bloom filter<a id='bloomfilter'></a>
+# Bloom filter<a id='bloom'></a>
 
