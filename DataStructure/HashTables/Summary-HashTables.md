@@ -129,6 +129,7 @@ $$pr\[ \bigwedge h(x_j) = i_j\] = \frac{1}{m^k} \quad \forall \text{  distinct  
 ## Mitigate collision
 
 ### Chaining
+One option for mitigating collision is chaining, by storing colide items as a linked-list. The expected length of the linked-list is the governing factor for lookup running time, and is at most $\frac{n}{m}$. For _newar-univeral_ hash function this ratio (called load factor needs to be at most 2. As long as the number of items n is only a constant factor bigger than the table size m, the search time is a constant.
 
 ### Open addressing
 
