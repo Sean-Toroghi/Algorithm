@@ -1,8 +1,8 @@
 <h1>Hash table; Bloom filter</h1>
 
 __Table of contents__
-- [hash tables - summary](#hashsummary)
-- [Hash tables - detail](#hashdetail)
+- [hash tables - short summary](#hashsummary)
+- [Hash tables - detail summary](#hashdetail)
 - [Bloom filter - summary](#bloom)
 
 __References__
@@ -26,7 +26,7 @@ __Code__
 
 
 
-# Overview and summary<a id='hashsummary'></a>
+# Overview and short summary<a id='hashsummary'></a>
 
 One of the most useful and ubiquitous data structures is hash tables. The most useful application of hash tables is the case of _fast search_. It is very useful in the case of evolving set of objects that also require fast lookup.
 
@@ -67,9 +67,15 @@ To design a high-performing hash function, we need to consider several factors:
 - a good hash function is also a decisive factor. There are several implementations of hash functions, such as _FarmHash_, _MD5_, _SpookyHash_, and _MurmurHash_.
 - An effective strategy to handle the collision is also an important factor for designing a high-performing hash function.
 
----
-# Hash tables - detail summary
+
+
+
+
+
 
 ---
-# Bloom filter
+# Hash tables - detail summary<a id='detailsummary'></a>
+
+---
+# Bloom filter<a id='bloomfilter'></a>
 
