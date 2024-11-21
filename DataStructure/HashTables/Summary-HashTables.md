@@ -1,8 +1,26 @@
-<h1>Hash table; Bloom filter - summary</h1>
+<h1>Hash table; Bloom filter</h1>
 
-[Codes]()
+__Table of contents__
+- [hash tables - summary](#hashsummary)
+- [Hash tables - detail](#hashdetail)
+- [Bloom filter - summary](#bloom)
 
-# Overview
+__References__
+- [Book - Algorithms Illuminated (Part 2): Graph Algorithms and Data Structures](https://www.algorithmsilluminated.org/)
+- [Book - Introduction to Algorithms, fourth edition](https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/)
+- [Course CMU -  Principles of Imperative Computation (Fall 2024)](https://www.cs.cmu.edu/~15122/handouts/lectures/12-hashing.pdf)
+- [Course CMU - Algorithm (2024)](https://courses.grainger.illinois.edu/cs473/fa2024/index.html)
+
+
+__Status__
+- [x] active
+- [ ] completed
+- [ ] updating
+
+__Code__
+- [Problems solved by hash table approach](https://github.com/Sean-Toroghi/Algorithm/blob/e3819391785d981dee93978d3dcb88084c9e2e8d/DataStructure/HashTables/HashTables.ipynb)
+
+# Overview and summary
 One of the most useful and ubiquitous data structures is hash tables. The most useful application of hash tables is the case of _fast search_. It is very useful in the case of evolving set of objects that also require fast lookup.
 
 ## Operation
@@ -34,12 +52,17 @@ The performance of a hash table drops as the population of input data increases.
 
 A good threshold for load factor is 70%. Once the load factor reaches the threshold, the algorithm requires to resize the table size, in order to maintain expected linear time for operations (lookup). 
 
----
-# Bloom filter
+
 
 ## Design a good hash table
 To design a high-performing hash function, we need to consider several factors:
 - a good threshold for load factor, and maintain it though the life of the algorithm. For example, once reaching  the threshold, we can double the size of the table. Also, we can define a lower band threshold to downsize the table, to avoid keeping a sparse array.
 - a good hash function is also a decisive factor. There are several implementations of hash functions, such as _FarmHash_, _MD5_, _SpookyHash_, and _MurmurHash_.
 - An effective strategy to handle the collision is also an important factor for designing a high-performing hash function.
+
+---
+# Hash tables - detail summary
+
+---
+# Bloom filter
 
