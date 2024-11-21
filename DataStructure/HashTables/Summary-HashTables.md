@@ -2,7 +2,7 @@
 
 __Table of contents__
 - [hash tables - short summary](#hashsummary)
-- [Hash tables - detail summary](#hashdetail)
+- [Hash tables - detail summary](#hashdetail) 
 - [Bloom filter - summary](#bloom)
 
 __References__
