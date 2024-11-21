@@ -88,18 +88,57 @@ In this case, an array is a special form of a hash table, in which $u=m$. It is 
 
 ## Hash function: randomness, unform, universal, near-universal, and k-uniform
 
-__Randomness__
+- __Randomness__
 
-Randomness becomes handy when it comes to design a hash function. If we design a predictable hash function, an adversery will take advantage of it by introducing inputs that always return the same position in hash table. We can introduce randomness in hash function as following: 
-- fix a set of hash functions $\mathbb{H}$ that all could map universte to hash table of size m
-- at runtime, for each hash table choose a hash function randomly from $\mathbb{H}$ and use it for the life of that hash table.
-- each hash table uses its own hash function that is independent of the other hash functions
+  Randomness becomes handy when it comes to design a hash function. If we design a predictable hash function, an adversery will take advantage of it by introducing inputs that always return the same position in hash table. We can introduce randomness in hash function as following: 
+  - fix a set of hash functions $\mathbb{H}$ that all could map universte to hash table of size m
+  - at runtime, for each hash table choose a hash function randomly from $\mathbb{H}$ and use it for the life of that hash table.
+  - each hash table uses its own hash function that is independent of the other hash functions
 
 
-__Uniform hash function__
+- __Uniform hash function__
 
-A  family $\mathscr{H}$ of hash functions is uniform if choosing a hash function uniformly at random from H
- makes every hash value equally likely for every item in the universe
+  A family $\mathbb{H}$ of hash functions is _uniform_ if choosing a hash function uniformly at random from $H$ makes every hash value equally likely for every item in the universe:
+
+$$Pr( h(x) = i) = \frac{1}{m}  \quad \forall x \in H$$
+
+  However, this property does not work! A constant function that maps universe tto a constant value $a$ in hash table, while the probaiblity of mapping to location $a$ is
+  $\frac{1}{m}$, but it is not a good hash function. 
+
+- __Universal hash function__
+  
+   A family of hash  functions is universal if, for any two items in the universe, the probability of collision is as small as possible:
+
+$$Pr( h(x) = h(y)) \leq \frac{1}{m}  \quad \forall x \neq y $$
+   
+   This consition minimizes number of collisions. However, this is an ideal consition, and for most cases a near universal hash function provides sufficient performance guarantees.
+
+- __Near universal hash function__
+
+  A family of hash  functions is _near-universal_ if, for any two items in the universe, the probability of collision holds the followng constrain:
+
+$$Pr( h(x) = h(y)) \leq \frac{2}{m}  \quad \forall x \neq y $$
+
+- __strongly k-universal or k-uniform hash function__
+
+  A family of hash functions is _strongly k-universal or k-uniform_ if for any sequence  of k disjoint keys and any sequence of k hash values, the probability that each key maps to the  corresponding hash value is $\frac{1}{m^k}$:
+
+$$pr\[ \bigwedge h(x_j) = i_j\] = \frac{1}{m^k} \quad \forall \text{  distinct  } x_j \quad \forall i_j $$
+
+
+## Mitigate collision
+
+### Chaining
+
+### Open addressing
+
+
+
+
+
+
+
+
 
 ##   
 
