@@ -13,8 +13,8 @@ __References__
 
 
 __Status__
-- [x] active
-- [ ] completed
+- [ ] in progress
+- [X] completed
 - [ ] updating
 
 __Code__
@@ -200,5 +200,32 @@ __Double hashing__ use two hash functions h and h′ to define the hash function
 # Bloom filter<a id='bloom'></a>
 
 <p style="text-align: right"><a href="#up">UP</a></p>
+
+
+While _bloom filter_ is not exactly considered as a hash table, it employs the concept of hash table with relax characteristic that makes is super fast lookup, with a small cost of vvery small probability of false-positive. This data structure is used to test whether an element is a member of a set. It is extremely efficient in terms of both time and space. Bloom filter can tell if an element is in the set when it's not, but it cannot tell an element is not in the set when it actually is.
+
+__Implementation__
+- set up a _bit array_ to store information. It is initialized with all zeros.
+- employ a fix number of hash function, each map an input to a differnt location in the bit array, change the value to 1.
+- operations:
+  - Insert: employ all hash functions to map input into bit array
+ - Check membership: use hash function to map the item and check the value of the mapped element in bit array.
+  -  If any bit is 0, the element is definitely not in the set;
+  -  If all the corresponding bits are 1, the element might be in the set.
+
+
+__False Positive Rate:__ 
+
+The likelihood of a false positive is determined by the size of the bit array and the number of hash functions. More hash functions and a smaller bit array increase the false positive rate, while a larger bit array and fewer hash functions decrease it.
+
+FP probability is computed as: 
+
+$$P_{\text{fp}} \approx \left( 1 - e^{-\frac{k \cdot n}{m}} \right)^k$$
+
+where
+- k: number of hash functions
+- n: number of elements inserted into the Bloom filter
+- m: size of bit array
+
 
 
