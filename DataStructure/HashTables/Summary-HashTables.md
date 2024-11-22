@@ -28,6 +28,8 @@ __Code__
 
 # Overview and short summary<a id='hashsummary'></a>
 
+<p style="text-align: right"><a href="#up">UP</a></p>
+
 One of the most useful and ubiquitous data structures is hash tables. The most useful application of hash tables is the case of _fast search_. It is very useful in the case of evolving set of objects that also require fast lookup.
 
 ## Operation
@@ -196,4 +198,7 @@ __Double hashing__ use two hash functions h and h′ to define the hash function
 
 ---
 # Bloom filter<a id='bloom'></a>
+
+<p style="text-align: right"><a href="#up">UP</a></p>
+
 
