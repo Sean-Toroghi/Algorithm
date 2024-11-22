@@ -76,7 +76,9 @@ To design a high-performing hash function, we need to consider several factors:
 ---
 # Hash tables - detail summary<a id='hashdetail'></a>   
 
-<p align="right">[UP](#up)</p>
+
+<p style="text-align: right"><a href="#up">UP</a></p>
+ 
 
 A hash table (or hash map) is a data structure for storing a set of items, so that we can quickly determine whether an item is or is not in the set. Dictionary (also called map or associate array), is an primitive data structure that maps its values to indices called keys. To implement a dictionary, we can simply employ linkedlist, which $O(n)$ time to lookup for a key. A sorted array takes $O(\log n)$ to find a key (BTS algorithm). Implementing a dictionary that takes constant for lookup requires employ hashing. Two important concepts comes with hashing are: average case complexity and randomness. The time complexity is average with hash table and while its behaviour is deteministic, but there is randomness inside the hash function implementation.
 
