@@ -190,16 +190,6 @@ __Quadratic probing__ uses a single hash function h and set has function as foll
 
 __Double hashing__ use two hash functions h and h′ to define the hash function:  $h_i(x) := (h(x)+i ·h′(x)) \mod m$.
 
-
-
-
-
-##   
-
-
-
-
-
 ---
 # Bloom filter<a id='bloom'></a>
 
