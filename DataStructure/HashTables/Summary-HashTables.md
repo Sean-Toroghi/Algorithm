@@ -132,6 +132,7 @@ $$pr\[ \bigwedge h(x_j) = i_j\] = \frac{1}{m^k} \quad \forall \text{  distinct  
 One option for mitigating collision is chaining, by storing colide items as a linked-list. The expected length of the linked-list is the governing factor for lookup running time, and is at most $\frac{n}{m}$. For _newar-univeral_ hash function this ratio (called load factor needs to be at most 2. As long as the number of items n is only a constant factor bigger than the table size m, the search time is a constant. 
 
 ### Open addressing
+Open addressing is another metod for resolving collision, by looking elsewhere in the table. This method employs a set of hash function, in which for an imput $x$, they each map a different location in the hash table. Then the lookup function iterates through all the mapped locations, and returns index, if it could find the item in any of those locations in hash table, or None if it could not find the item in any of the mapped locations in the hash table.  
 
 ## Design a hash function
 
@@ -165,10 +166,29 @@ $$h_{multiplicative, a, ,b, p}(x) =   ((ax + b) \mod p)\mod m$$
 
 
 
-__Muiltiplicative hash function -  using modular arithmetic with powers of two__
+__Muiltiplicative hash function -  using modular arithmetic with powers of two - near-universal hashing__
 
 Binary multiplicative hashing is a slightly simpler variant of multiplicative hashing, by avoiding the need for large prime numbers and was first proposed by 
- Martin Dietzfelbinger, Torben Hagerup, Jyrki Katajainen, and Martti Penttonen in 1997. 
+Martin Dietzfelbinger, Torben Hagerup, Jyrki Katajainen, and Martti Penttonen in 1997. To simsplify the problem without loosing generalizty, assuming universe $U$ is a list of w-bits ($U = \[2^w\]$) and the hash table is a smaller set of l-bits integers of size ($m = \[2^l\]$). The goal is to map universe (words) to l-bit integer (labels). 
+
+To set up the hash function, we need to define _salt_ as following:
+- pick a random odd integer $a \in \[2^w\]$ 
+
+And the hash function is defined as:
+
+$$h_{multiplicative, a}(x) := \frac{(a·x)\mod2^w}{2^{w-l}}$$
+
+To proove this hash function satifies near-univeral hashing requirement, we proove for any integer $x,z \in w$, there is exactly one integer $a \in w$ that such that $x \mod 2w = z$, then use the lemma to prove it is a near-universal hashing.
+
+### Probing (linear, binary, quadratic) and double hashing
+
+__Linear probing__ hash function is designed based on the concept of _open addressing_, $h_i(x) := (h(x)+i) \mod m$. __Advantages__ of linear probing are: 1. probing strategy visits consecutive entries in the has table, result in better cache performance than other strategies, and 2. with load factor less than 1,  the expected length of any probe sequence is constant.
+
+__Binary probing__ is a simpler version of linear probing, is binary probing: $h_i(x) := h(x)⊕i$. Here we assume $m=2^l$, and ⊕ denotes bitwise exlusive-or.
+
+__Quadratic probing__ uses a single hash function h and set has function as follow: $h_i(x) := (h(x)+i^2)\mod m$.
+
+__Double hashing__ use two hash functions h and h′ to define the hash function:  $h_i(x) := (h(x)+i ·h′(x)) \mod m$.
 
 
 
