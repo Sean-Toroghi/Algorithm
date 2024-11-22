@@ -129,13 +129,46 @@ $$pr\[ \bigwedge h(x_j) = i_j\] = \frac{1}{m^k} \quad \forall \text{  distinct  
 ## Mitigate collision
 
 ### Chaining
-One option for mitigating collision is chaining, by storing colide items as a linked-list. The expected length of the linked-list is the governing factor for lookup running time, and is at most $\frac{n}{m}$. For _newar-univeral_ hash function this ratio (called load factor needs to be at most 2. As long as the number of items n is only a constant factor bigger than the table size m, the search time is a constant.
+One option for mitigating collision is chaining, by storing colide items as a linked-list. The expected length of the linked-list is the governing factor for lookup running time, and is at most $\frac{n}{m}$. For _newar-univeral_ hash function this ratio (called load factor needs to be at most 2. As long as the number of items n is only a constant factor bigger than the table size m, the search time is a constant. 
 
 ### Open addressing
 
+## Design a hash function
+
+### Multiplicative hashing
+Multiplicatie hashing is a imple hash function that achieves either near-universal hashing or universal hashing, first introduced by Lawrence Carter and Mark Wegman in the late 1970s. Among many varients of this hash function, two widely use ones are: 1- using modular arithmetic with prime numbers, 2- using modular arithmetic with powers of two. To perform this method we need to set up the folowings:
+- For a non negative integer $n$, define two sets: $set(n) = \\{0,1,\dots, n-1 \\}$ and $set(n^+) = \\{1,2,\dots, n-1\\}$.
+- Define a random integer $a$, called _salt_, which is assigned to a hash table and remain the same for that hash table for the life of the table.
+
+  Given a prime number $p$ larger than the size of universe ($p>|U|$), $a \in \[p\]^+$
+
+- Define a random integer $b$, which is assigned to a hash table and remain the same for that hash table for the life of the table.
+
+  Given a prime number $p$ larger than the size of universe ($p>|U|$), $a \in \[p\]$
+
+__Muiltiplicative hash function - using modular arithmetic with prime numbers Version 1 - near-universal hashing__, mapping universe to hash table of size $m$:
+
+  $$h_{multiplicative, a, p}(x) =  (ax \mod p)\mod m$$
+
+  To proove this hash function satisfies near-universal hashing requirement, we first proove there exist a unique value $z$ for a given value $a$ that hold this equality: $(az \mod p) = 1$. Second step is to proove, for two input values $x,y$, collision occurs only if either:
+  - $x=y$, or
+  - $h_{multiplicative, a, p}((x − y) \mod p)=0$, or
+  - $h_{multiplicative, a, p}((y - x) \mod p)=0$
+ 
+  Finaly we need to proove for any integer $z\in \[p\]^+$, $Pr_a\[h_{multiplicative, a, p}\] \leq \frac{1}{m}$
+  
+__Muiltiplicative hash function - using modular arithmetic with prime numbers Version 2 - universal hashing__
+
+With a small modification to version 1, the following hash function satisfies _universal hashing_ requirement:
+
+$$h_{multiplicative, a, ,b, p}(x) =   ((ax + b) \mod p)\mod m$$
 
 
 
+__Muiltiplicative hash function -  using modular arithmetic with powers of two__
+
+Binary multiplicative hashing is a slightly simpler variant of multiplicative hashing, by avoiding the need for large prime numbers and was first proposed by 
+ Martin Dietzfelbinger, Torben Hagerup, Jyrki Katajainen, and Martti Penttonen in 1997. 
 
 
 
